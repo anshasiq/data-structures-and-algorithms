@@ -2,3 +2,6 @@
 
 code challenge
  [array-reverse](/array-reverse/Reverse%20Array.md)
+
+ code challenge
+ [array-reverse](/array-insert-shift/array-insert-shift.md)
