@@ -1,7 +1,11 @@
 # data-structures-and-algorithms
 
-code challenge
+code challenge 1
  [array-reverse](/array-reverse/Reverse%20Array.md)
 
- code challenge
+ code challenge 2
  [array-insert-shift](/array-insert-shift/array-insert-shift.md)
+
+
+ code challenge 3
+ [array-Binary-search](/array-binary-search/binary-readme.md)
