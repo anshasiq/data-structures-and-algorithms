@@ -47,9 +47,67 @@ return false;
             }
             current = current.next;
         }
-        
+
         sb.append("} -> NULL");
         return sb.toString();
     }
- 
+
+    void append(String newValue) {
+        Node newNode = new Node(newValue);
+
+        if (head == null) {
+            head = newNode;
+        } else {
+            Node current = head;
+            while (current.next != null) {
+                current = current.next;
+            }
+            current.next = newNode;
+        }
+    }
+    void insertBefore(String targetValue, String newValue) {
+        Node newNode = new Node(newValue);
+
+        if (head == null) {
+            head = newNode;
+            return;
+        }
+
+        if (head.data == targetValue) {
+            newNode.next = head;
+            head = newNode;
+            return;
+        }
+
+        Node current = head;
+        while (current.next != null && current.next.data != targetValue) {
+            current = current.next;
+        }
+
+        if (current.next != null) {
+            newNode.next = current.next;
+            current.next = newNode;
+        }
+    }
+    void insertAfter(String targetValue, String newValue) {
+        Node newNode = new Node(newValue);
+
+        if (head == null) {
+
+            head = newNode;
+            return;
+        }
+
+        Node current = head;
+        while (current != null && current.data != targetValue) {
+            current = current.next;
+        }
+
+        if (current != null) {
+
+            newNode.next = current.next;
+            current.next = newNode;
+        }
+    }
+
 };
