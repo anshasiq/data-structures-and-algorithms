@@ -9,3 +9,11 @@ code challenge 1
 
  code challenge 3
  [array-Binary-search](/array-binary-search/binary-readme.md)
+
+
+ code challenge 5 + 6 + 7
+ [Linked-list](./linked-list/al md/CC7.md)
+ 
+ 
+
+ 
