@@ -101,6 +101,10 @@ public class LinkedList {
     }
 
    public int kthFromEnd(int f){
+        if(f<0){
+            System.out.println("it's negative number");
+            return -1;
+    }
        Node  current=head;
        int s=1;
     while(current.next!=null) {
@@ -109,7 +113,7 @@ public class LinkedList {
     }
     int e=s;
     if(f>e-1){
-        System.out.println("ereor");
+        System.out.println("it's not existing");
         return -1;}
        current=head;
        while(current!=null) {
