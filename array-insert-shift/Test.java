@@ -3,7 +3,7 @@ public class Test{
   static int[]insertShiftArray(int [] arr,int n){
     int[] numbers = new int[(arr.length)+1];
     if(arr.length==0){
-        System.out.println("error");
+        System.out.println("invalid input");
         return new int[0];
     }
     if(arr.length==1){

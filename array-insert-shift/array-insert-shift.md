@@ -1,26 +1,27 @@
-# whiteBoard
-## the picture
-![Alt Text](null(2).png)
-
-### Approach & Efficiency
+# Challenge Title
+<!-- Description of the challenge -->
+### array-insert-shift
 Problem Domain:
-I have an array with a number  and i should return array with the number in the middle of it.
-
-
-
-### visual:
-input: [1,2,3],5 ==> output [1,2,5,3]
-
+I have an array with a number ,and i should return a new array with the given number and put it in the middle of it.
+## Whiteboard Process
+<!-- Embedded whiteboard image -->
+![Alt Text](null(2).png)
+## Approach & Efficiency
+<!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
 ### Algorithm:
 In order to put the number in the midlle of array.
 - get the index middle
 - make a new array with lenght+1
 - itrate through the first array and put all values in second one 
 
+### Big O:
+time O(n)
+memory O(n)
 
-## Big O:
-O(n)
 
+## Solution
+<!-- Show how to run your code, and examples of it in action -->
+![Alt Text](p3.png)
 ## Code:
 <pre>
  static int[]insertShiftArray(int [] arr,int n){
@@ -57,20 +58,16 @@ main ==============>
 }
 </pre>
 
-## test cases:
 
-<pre>input 
-{1,2,4,5} 3
-output 
-[1 2 3 4 5]
 
-input 
-{1} 5
-output 
-[1 5] 
 
-input 
-{}
-output 
-error
-</pre>
+
+
+
+
+
+
+
+
+
+
