@@ -5,33 +5,25 @@ package linked.list;
 
 public class Main {
 
+
     public static void main(String[] args) {
 
             LinkedList ll = new LinkedList();
         LinkedList Nll = new LinkedList();
             System.out.println("helloo");
 
-            ll.insert(1);
-            ll.insert(2);
-            ll.insert(3);
 
-            System.out.println(ll.includes(3));
-            ll.insertAfter(3, 4);
-            ll.insertAfter(2, 3);
-            ll.insertBefore(1,0 );
-            ll.append(10);
-        Nll.append(1);
-        Nll.append(3);
-        Nll.append(8);
-        Nll.append(2);
+        ll.append(1);
 
-        Nll.kthFromEnd(0);
-        Nll.kthFromEnd(1);
-        Nll.kthFromEnd(2);
-        Nll.kthFromEnd(3);
-        Nll.kthFromEnd(4);
-        System.out.println(ll.toString());
 
+        Nll.append(5);
+
+
+
+//        System.out.println(ll.toString());
+
+LinkedList F =  ll.ziplists(ll,Nll);
+        System.out.println( F.toString());
         }
     }
 
