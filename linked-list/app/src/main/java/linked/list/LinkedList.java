@@ -1,5 +1,7 @@
 package linked.list;
 
+import static java.lang.Math.max;
+
 public class LinkedList {
     Node head;
 
@@ -42,6 +44,16 @@ public class LinkedList {
         return sb.toString();
     }
 
+   public int size(){
+        int y=0;
+        Node current=head;
+        while (current!=null)
+        {
+            ++y;
+            current=current.next;
+        }
+        return y;
+    }
     void append(int newValue) {
         Node newNode = new Node(newValue);
 
@@ -127,7 +139,22 @@ public class LinkedList {
 
         return 0;
    }
-
-
+    public  LinkedList ziplists  (LinkedList a, LinkedList b){
+        LinkedList m = new LinkedList();
+        int o= max(a.size(),b.size());
+       Node aa = a.head;
+       Node bb= b.head;
+       int e=0,e2=0;
+       while (o!=0)
+       {   if(e<a.size()){
+           m.append(aa.data);
+           aa=aa.next;}
+           if(e2<b.size()) {
+           m.append(bb.data);
+           bb = bb.next;
+           }
+++e;++e2;--o;
+       }
+        return m;}
 
 };
