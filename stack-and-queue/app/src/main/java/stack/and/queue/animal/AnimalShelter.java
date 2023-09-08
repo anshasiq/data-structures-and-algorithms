@@ -1,29 +1,8 @@
-## Animal Shelter
+package stack.and.queue.animal;
+import stack.and.queue.queue.Queue;
 
-to implement an animal shelter using fifo approach
-
-### WhiteBoard
-
-![animalShelter](AnimalShelterPNG.png)
-
-### Approach & Efficiency
-
-The approach used in this to make 2 Queues one queue is for dogs object and
-the another is for cats objects.
-now to enqueue into the animalshelter we need to check the class type of
-the inserted animal if dog added it to the dog queue and the same goes for cats
-
-### Big O
-
-enqueue method takes the same as the queue time complexity which is O(1) and the
-same goes for the dequeue O(1)
-
-## Solution
-<!-- Show how to run your code, and examples of it in action -->
-
-![tests](animals.PNG)
-```java
-  private final Queue<Dog> dogs;
+public class AnimalShelter {
+    private final Queue<Dog> dogs;
     private final Queue<Cat> cats;
 
 
@@ -58,5 +37,4 @@ same goes for the dequeue O(1)
     public String getShelter(){
         return dogs + " " + cats;
     }
-
-```
+}
