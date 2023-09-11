@@ -10,21 +10,57 @@ public class App {
 //    public String getGreeting() {
 //        return "Hello World!";
 //    }
+ public static boolean validate_brackets(String input){
+     String y=input;
+     Stack<Character> r = new Stack<>();
+     for(int i=0;i<y.length();++i) {
+         if(y.charAt(i)!='{' && y.charAt(i)!='}' && y.charAt(i)!='['
+      && y.charAt(i)!=']' && y.charAt(i)!='(' && y.charAt(i)!=')' )
+             continue;
+//         System.out.println(y.charAt(i));
+         if(r.isEmpty()){
+         r.push(y.charAt(i));
+         continue;}
+         else {
+             if(r.peek()=='[' && y.charAt(i)==']')
+                 r.pop();
+             else if (r.peek()=='{' && y.charAt(i)=='}')
+                 r.pop();
+             else if (r.peek()=='(' && y.charAt(i)==')')
+                 r.pop();
+             else
+                 r.push(y.charAt(i));
 
+         }
+
+
+     }
+//     System.out.println(r.isEmpty());
+
+     return r.isEmpty();
+ }
     public static void main(String[] args) {
-        Stack<Integer> stack = new Stack<>();
-        stack.push(12);
-        stack.push(13);
-        stack.push(14);
-        stack.isEmpty();
-        stack.peek();
-        stack.pop();
-        stack.peek();
-        Queue<Integer> queue = new Queue<>();
-        queue.enqueue(4);
-        queue.enqueue(6);
-        queue.enqueue(45);
-        queue.peek();
+        validate_brackets("[}");
+//        StringBuilder result = new StringBuilder();
+
+
+//        Stack<Integer> stack = new Stack<>();
+//        stack.push(12);
+//        stack.push(13);
+//        stack.push(14);
+//        stack.isEmpty();
+//        stack.peek();
+//        stack.pop();
+//        stack.peek();
+//        Queue<Integer> queue = new Queue<>();
+//        queue.enqueue(4);
+//        queue.enqueue(6);
+//        queue.enqueue(45);
+//        queue.peek();
+
+
+
+
 //        System.out.println(new App().getGreeting());
     }
 }
