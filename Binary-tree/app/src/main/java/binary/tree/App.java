@@ -10,28 +10,26 @@ public class App {
         BinaryTree tree = new BinaryTree();
         tree.root = new Node(1);
         tree.root.left = new Node(2);
-        tree.root.right = new Node(3);
+        tree.root.right = new Node(344);
         tree.root.left.left = new Node(4);
         tree.root.left.right = new Node(5);
-//        tree.Inorder(tree.root);
+        tree.root.left.right = new Node(42);
+//tree.printInorder();
 //        System.out.println();
-//        tree.Preorder(tree.root);
-//      tree.Postorder(tree.root);
-tree.printInorder();
-        System.out.println();
-tree.printPostorder();
-        System.out.println();
-tree.printPreorder();
+//tree.printPostorder();
+//        System.out.println();
+//tree.printPreorder();
+        System.out.println(tree.FindMaximumValue());
 
-        BinarySearchTree bt = new BinarySearchTree();
-        bt.add(7);
-        bt.add(3);
-        bt.add(2);
-        bt.add(5);
-        bt.add(10);
-        bt.add(12);
-        bt.printPreorder();
-        bt.Contains(6);
+//        BinarySearchTree bt = new BinarySearchTree();
+//        bt.add(7);
+//        bt.add(3);
+//        bt.add(2);
+//        bt.add(5);
+//        bt.add(10);
+//        bt.add(12);
+//        bt.printPreorder();
+//        bt.Contains(6);
 
     }
 }
