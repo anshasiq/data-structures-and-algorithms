@@ -6,12 +6,28 @@ import java.util.Objects;
 
 public class BinaryTree {
     Node root;
+    int max=0;
     ArrayList<Object> p = new ArrayList<Object>(); // Create an ArrayList object
     ArrayList<Object> q = new ArrayList<Object>();
     BinaryTree(int key) {
         root = new Node(key); }
     BinaryTree() {
         root = null; }
+
+  void reb (Node node){
+      if (node == null)
+          return;
+      if(max<node.data)
+          max=node.data;
+      reb(node.left);
+      reb(node.right);
+
+  }
+    public int FindMaximumValue(){
+        reb(root);
+        return max;
+    }
+
 
     void Inorder(Node node){
         if (node == null)
@@ -38,7 +54,8 @@ public class BinaryTree {
 
 }
 
-    void printPostorder() { Postorder(root); }
+    void printPostorder() {
+        Postorder(root); }
    public ArrayList printInorder() {
         Inorder(root);
     return p;
