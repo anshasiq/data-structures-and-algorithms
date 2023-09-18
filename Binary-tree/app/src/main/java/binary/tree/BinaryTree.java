@@ -1,9 +1,14 @@
 package binary.tree;
+import java.util.ArrayList;
 
-public class BinaryTree <T>{
+import java.util.ArrayList;
+import java.util.Objects;
+
+public class BinaryTree {
     Node root;
-
-    BinaryTree(T key) {
+    ArrayList<Object> p = new ArrayList<Object>(); // Create an ArrayList object
+    ArrayList<Object> q = new ArrayList<Object>();
+    BinaryTree(int key) {
         root = new Node(key); }
     BinaryTree() {
         root = null; }
@@ -13,10 +18,12 @@ public class BinaryTree <T>{
             return;
         Inorder(node.left);
         System.out.print(node.data + " ");
+        p.add(node.data);
         Inorder(node.right);}
     void Preorder(Node node){
         if (node == null)
             return;
+        q.add(node.data);
         System.out.print(node.data + " ");
         Preorder(node.left);
         Preorder(node.right);
@@ -32,8 +39,14 @@ public class BinaryTree <T>{
 }
 
     void printPostorder() { Postorder(root); }
-    void printInorder() { Inorder(root); }
-    void printPreorder() { Preorder(root); }
+   public ArrayList printInorder() {
+        Inorder(root);
+    return p;
+    }
+    public ArrayList printPreorder() {
+        Preorder(root);
+    return q;
+    }
 
 
 

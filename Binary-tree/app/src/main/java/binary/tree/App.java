@@ -22,5 +22,16 @@ tree.printInorder();
 tree.printPostorder();
         System.out.println();
 tree.printPreorder();
+
+        BinarySearchTree bt = new BinarySearchTree();
+        bt.add(7);
+        bt.add(3);
+        bt.add(2);
+        bt.add(5);
+        bt.add(10);
+        bt.add(12);
+        bt.printPreorder();
+        bt.Contains(6);
+
     }
 }
