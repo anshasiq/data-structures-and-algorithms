@@ -1,5 +1,7 @@
 package binary.tree;
 import java.util.ArrayList;
+import java.util.Queue;
+import java.util.LinkedList;
 
 import java.util.ArrayList;
 import java.util.Objects;
@@ -9,6 +11,8 @@ public class BinaryTree {
     int max=0;
     ArrayList<Object> p = new ArrayList<Object>(); // Create an ArrayList object
     ArrayList<Object> q = new ArrayList<Object>();
+    Queue<Node> Q = new LinkedList<>();
+
     BinaryTree(int key) {
         root = new Node(key); }
     BinaryTree() {
@@ -64,7 +68,24 @@ public class BinaryTree {
         Preorder(root);
     return q;
     }
+    ArrayList<Integer> breadth_first = new ArrayList<Integer>();
 
+   public ArrayList breadth_first(Node node){
+        Q.add(node);
+       while (!Q.isEmpty())
+        {
+            if(Q.peek().left!=null)
+            Q.add(Q.peek().left);
+            if(Q.peek().right!=null)
+            Q.add(Q.peek().right);
+            breadth_first.add(Q.peek().data);
+            //System.out.println(Q.peek().data);
+            Q.poll();
+
+        }
+
+return  breadth_first;
+   }
 
 
 }
