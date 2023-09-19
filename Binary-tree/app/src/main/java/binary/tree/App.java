@@ -10,16 +10,20 @@ public class App {
         BinaryTree tree = new BinaryTree();
         tree.root = new Node(1);
         tree.root.left = new Node(2);
-        tree.root.right = new Node(344);
+        tree.root.right = new Node(3);
+        tree.root.right.right = new Node(99);
+        tree.root.right.left = new Node(66);
         tree.root.left.left = new Node(4);
+        tree.root.left.left.left = new Node(7);
         tree.root.left.right = new Node(5);
-        tree.root.left.right = new Node(42);
+        tree.breadth_first(tree.root);
+
 //tree.printInorder();
 //        System.out.println();
 //tree.printPostorder();
 //        System.out.println();
 //tree.printPreorder();
-        System.out.println(tree.FindMaximumValue());
+//        System.out.println(tree.FindMaximumValue());
 
 //        BinarySearchTree bt = new BinarySearchTree();
 //        bt.add(7);
