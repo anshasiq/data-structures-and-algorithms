@@ -9,14 +9,16 @@ public class App {
         System.out.println("hello world");
         BinaryTree tree = new BinaryTree();
         tree.root = new Node(1);
-        tree.root.left = new Node(2);
+        tree.root.left = new Node(3);
         tree.root.right = new Node(3);
-        tree.root.right.right = new Node(99);
-        tree.root.right.left = new Node(66);
-        tree.root.left.left = new Node(4);
+        tree.root.right.right = new Node(4);
+        tree.root.right.left = new Node(5);
+        tree.root.left.left = new Node(6);
         tree.root.left.left.left = new Node(7);
-        tree.root.left.right = new Node(5);
+        tree.root.left.right = new Node(1);
         tree.breadth_first(tree.root);
+
+//        System.out.println(tree.oddnum());
 
 //tree.printInorder();
 //        System.out.println();
@@ -34,6 +36,24 @@ public class App {
 //        bt.add(12);
 //        bt.printPreorder();
 //        bt.Contains(6);
+
+    KaryNode a = new KaryNode("3");
+    KaryNode c = new KaryNode("5");
+    KaryNode b = new KaryNode("15");
+    KaryNode d = new KaryNode("30");
+
+
+        FizzBuzzTree r = new FizzBuzzTree(a);
+
+
+        a.addChild(b);
+        a.addChild(c);
+        b.addChild(d);
+
+  r.change(a);
+        r.preorderTraversal(a);
+
+
 
     }
 }
