@@ -1,28 +1,40 @@
 package binary.tree;
 
 public class FizzBuzzTree {
-    public static KaryTreeNode fizzBuzzTree(KaryTreeNode root) {
-        if (root == null) {
-            return null;
-        }
+   KaryNode root;
 
-        // Calculate the new value based on FizzBuzz rules
-        String newValue;
-        if (root.value % 3 == 0 && root.value % 5 == 0) {
-            newValue = "FizzBuzz";
-        } else if (root.value % 3 == 0) {
-            newValue = "Fizz";
-        } else if (root.value % 5 == 0) {
-            newValue = "Buzz";
-        } else {
-            newValue = Integer.toString(root.value);
-        }
+    public FizzBuzzTree(KaryNode root) {
+        this.root = root;
+    }
 
-        // Create a new node with the new value and recurse on children
-        KaryTreeNode newRoot = new KaryTreeNode("newValue");
-        for (KaryTreeNode child : root.children) {
-            newRoot.children.add(fizzBuzzTree(child));
-        }
+    public void change(KaryNode node) {
+        if (node != null) {
+            System.out.println(node.value + " ");
+            int data = Integer.parseInt(node.getValue());
+//            System.out.println(data);
+            if (data % 3 == 0 && data % 5 == 0) {
+            node.value="fizzBuss";
+            }
+            else if (data % 3 == 0) {
+                node.value="Fizz";}
+            else if (data % 5 == 0) {
+                node.value="Buzz";}
+//
+            for (KaryNode child : node.childrenNodes) {
+                change(child);
+            }
+        }}
 
-        return newRoot;
-}}
+
+
+    public void preorderTraversal(KaryNode root) {
+        if (root != null) {
+            System.out.print(root.value + " ");
+            for (KaryNode child : root.childrenNodes) {
+                preorderTraversal(child);
+            }
+        }}
+
+
+
+}

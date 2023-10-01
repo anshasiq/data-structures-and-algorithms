@@ -87,6 +87,24 @@ public class BinaryTree {
 return  breadth_first;
    }
 
+int sum=0;
+    public int oddnum(){
+        Rec(root);
+        return sum;
+    }
+void Rec (Node node){
+    if (node == null)
+        return;
+
+    Rec(node.left);
+    Rec(node.right);
+
+    if(node.data%2!=0)
+        sum=sum+node.data;
+
+}
+
+
 
 }
 
