@@ -101,4 +101,8 @@ r: The right index of the current subarray.
 It is a recursive function that continues dividing the array into smaller subarrays until the subarrays are of size 1 (base case).
 At each recursive step, it calculates the middle index m and recursively sorts the left and right halves of the current subarray.
 Finally, it calls the merge function to merge the two sorted halves back into a single sorted subarray.
-The merge and sort functions work together to sort the entire input array using the Merge Sort algorithm. This sorting algorithm has a time complexity of O(n*log(n)), making it efficient for large datasets
+The merge and sort functions work together to sort the entire input array using the Merge Sort algorithm. This sorting algorithm has a time complexity of O(n*log(n)), making it efficient for large datasets  
+--- 
+   
+### Time Complexity : Big O(n*log(n))  
+### Memory Complexity : Big O(n)
