@@ -3,30 +3,37 @@
  */
 package hashmap;
 
-import java.util.Locale;
+import hashmap.TreeIntersection.TreeIntersection;
 
 public class App {
-    public static void main(String[] args) {
+
+
+    public static String repeated_word(String d){
+     d=  d.toLowerCase();
+    d=d.replace(",", "");
+        d=d.replace(".", "");
+        System.out.println(d);
+        String[] words = d.split(" ");
+
+
+
         Hashtable<String, Integer> h = new Hashtable<>();
+        for(String x : words) {
+         if(h.has(x)){
+             System.out.println(x);
+             return x;
+         }
+             else
+            h.set(x, 1);
+        }
+        System.out.println(h);
+        return " ";
+    }
+    public static void main(String[] args) {
+        TreeIntersection a = new TreeIntersection();
 
-        h.set("apple", 5);
-        h.set("ap", 8);
-        h.set("apas", 344);
-        h.set("ap", 8);
-        h.set("ahmad", 344);
-        h.set("ali", 8);
-        h.set("ahmad", 5);
-        h.set("mohammed", 8);
-        h.set("Qais".toLowerCase(), 344);
-        h.set("alaa", 8);
-        h.set("haithem", 344);
-        h.set("khaled", 8);
+        repeated_word("It was a queer, sultry summer, the summer they electrocuted the Rosenbergs, and I didn’t know what I was doing in New York...");;
+        repeated_word("It WAS the best of times, it was the worst of times, it was the age of wisdom, it was the age of foolishness, it was the epoch of belief, it was the epoch of incredulity, it was the season of Light, it was the season of Darkness, it was the spring of hope, it was the winter of despair, we had everything before us, we had nothing before us, we were all going direct to Heaven, we were all going direct the other way – in short, the period was so far like the present period, that some of its noisiest authorities insisted on its being received, for good or for evil, in the superlative degree of comparison only...");
 
-        System.out.println(h.has("ap"));
-        System.out.println( h.toString());
-        System.out.println(h.has("apdf")+" ");
-        System.out.println(h.hash("apple"));
-
-//        System.out.println( Entry);
     }
 }
