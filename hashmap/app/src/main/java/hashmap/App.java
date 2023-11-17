@@ -55,39 +55,6 @@ public class App {
 
 
     public static void main(String[] args) {
-        BinaryTree a = new BinaryTree();
-
-        a.root =new Node(150);
-        a.root.right = new Node(250);
-        a.root.right.left = new Node(200);
-        a.root.right.right = new Node(350);
-        a.root.right.right.left = new Node(300);
-        a.root.right.right.right = new Node(500);
-        a.root.left= new Node(100);
-        a.root.left.right= new Node(160);
-        a.root.left.right.left= new Node(125);
-        a.root.left.right.right= new Node(175);
-        a.root.left.left= new Node(75);
-//        a.Preorder(a.root);
-
-
-
-
-        BinaryTree B = new BinaryTree();
-        B.root=new Node(42);
-
-        B.root.right = new Node(600);
-        B.root.right.left = new Node(200);
-        B.root.right.right = new Node(350);
-        B.root.right.right.left = new Node(4);
-        B.root.right.right.right = new Node(500);
-        B.root.left= new Node(100);
-        B.root.left.right= new Node(160);
-        B.root.left.right.left= new Node(125);
-        B.root.left.right.right= new Node(175);
-        B.root.left.left= new Node(15);
-
-//        tree_intersection (a,B);
 
 
 
