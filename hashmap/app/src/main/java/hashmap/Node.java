@@ -1,4 +1,4 @@
-package hashmap.TreeIntersection;
+package hashmap;
 
 public class Node {
 

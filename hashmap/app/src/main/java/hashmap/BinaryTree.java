@@ -1,4 +1,5 @@
-package hashmap.TreeIntersection;
+package hashmap;
+
 import java.util.ArrayList;
 import java.util.Queue;
 import java.util.LinkedList;
