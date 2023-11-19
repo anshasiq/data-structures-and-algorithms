@@ -9,6 +9,32 @@ public class Graph {
         this.adjacencyList = new HashMap<>();
     }
 
+
+    public List<Vertex> bfs(Vertex start) {
+        List<Vertex> visited = new ArrayList<>();
+        Queue<Vertex> queue = new LinkedList<>();
+
+        queue.add(start);
+        visited.add(start);
+
+        while (!queue.isEmpty()) {
+            Vertex current = queue.poll();
+
+            System.out.println( current);
+
+            for (Edge edge : adjacencyList.get(current)) {
+                Vertex neighbor = edge.vertex;
+                if (!visited.contains(neighbor)) {
+                    queue.add(neighbor);
+                    visited.add(neighbor);
+                }
+            }
+        }
+
+        return visited;
+    }
+
+
     public Vertex addVertex(String value) {
         Vertex vertex = new Vertex(value);
         adjacencyList.put(vertex, new LinkedList<>());
