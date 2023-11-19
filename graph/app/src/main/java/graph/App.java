@@ -3,19 +3,28 @@
  */
 package graph;
 
+import java.util.Collection;
+
 public class App {
     public static void main(String[] args) {
         Graph graph = new Graph();
 
-        Vertex vertex1 = graph.addVertex("B");
-        Vertex vertex2 = graph.addVertex("A");
-        Vertex vertex3 = graph.addVertex("C");
+        Vertex A = graph.addVertex("A");
+        Vertex B = graph.addVertex("B");
+        Vertex C = graph.addVertex("C");
+        Vertex D = graph.addVertex("D");
 
-        graph.addEdge(vertex1, vertex2 ,2);
-        graph.addEdge(vertex2, vertex3,3);
-        graph.addEdge(vertex2, vertex1);
+        graph.addEdge(A, B ,2);
+        graph.addEdge(C, D);
+        graph.addEdge(D, B);
+//        graph.addEdge(vertex2, vertex1);
+
         System.out.println("Vertices: " + graph.getVertices());
-        System.out.println("Neighbors of vertex " + vertex2 + ": " + graph.getNeighbors((Vertex) vertex2));
+        System.out.println("Neighbors of vertex " + D + ": " + graph.getNeighbors(D));
         System.out.println("Graph size: " + graph.size());
-}
+
+        Collection<Vertex> result = graph.bfs(D);
+        System.out.println(result);
+
+    }
 }
