@@ -4,6 +4,8 @@
 package graph;
 
 import java.util.Collection;
+import java.util.List;
+import java.util.function.Predicate;
 
 public class App {
     public static void main(String[] args) {
@@ -15,14 +17,18 @@ public class App {
         Vertex D = graph.addVertex("D");
 
         graph.addEdge(A, B ,2);
-        graph.addEdge(C, D);
-        graph.addEdge(D, B);
+        graph.addEdge(C, D,10);
+        graph.addEdge(D, B,4);
 //        graph.addEdge(vertex2, vertex1);
 
         System.out.println("Vertices: " + graph.getVertices());
         System.out.println("Neighbors of vertex " + D + ": " + graph.getNeighbors(D));
+//        for(Edge x : graph.getNeighbors(D))
+        System.out.println(graph.getNeighbors(D));
+//        System.out.println( graph.getNeighbors(D));
         System.out.println("Graph size: " + graph.size());
-
+        graph.getNeighbors(A).contains(C);
+        System.out.println( graph.hasNeighbor(A,B));
         Collection<Vertex> result = graph.bfs(D);
         System.out.println(result);
 

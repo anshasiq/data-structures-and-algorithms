@@ -34,6 +34,10 @@ public class Graph {
         return visited;
     }
 
+    public boolean hasNeighbor(Vertex vertex, Vertex target) {
+        Collection<Edge> neighbors = getNeighbors(vertex);
+        return neighbors.contains(target);
+    }
 
     public Vertex addVertex(String value) {
         Vertex vertex = new Vertex(value);
@@ -94,4 +98,5 @@ public class Graph {
         public String toString() {
             return "Edge to " + vertex + " with weight " + weight;
         }
-    }}
+    }
+}
