@@ -3,7 +3,9 @@
  */
 package graph;
 
+
 import java.util.List;
+
 
 public class App {
     public static Integer businessTrip(Graph graph, String[] cities) {
@@ -30,9 +32,16 @@ public class App {
     public static void main(String[] args) {
         Graph graph = new Graph();
 
-        Vertex vertex1 = graph.addVertex("B");
-        Vertex vertex2 = graph.addVertex("A");
-        Vertex vertex3 = graph.addVertex("C");
+        Vertex A = graph.addVertex("A");
+        Vertex B = graph.addVertex("B");
+        Vertex C = graph.addVertex("C");
+        Vertex D = graph.addVertex("D");
+
+        graph.addEdge(A, B ,2);
+        graph.addEdge(C, D,10);
+        graph.addEdge(D, B,4);
+//        graph.addEdge(vertex2, vertex1);
+
 
         graph.addEdge("A","B",7)  ;
 //        graph.addEdge("B","A",2);
@@ -58,4 +67,5 @@ public class App {
         Integer cost2 = businessTrip(citiesGraph, trip2);
         System.out.println(cost2);
 }
+
 }
