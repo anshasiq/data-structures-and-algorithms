@@ -3,14 +3,24 @@ package graph;
 import java.util.Objects;
 
 public class Vertex {
-    private String value;
+    public String label;
+    public int weight;
 
-    public Vertex(String value) {
-        this.value = value;
+    public Vertex(String label) {
+        this.label = label;
     }
 
-    public String getValue() {
-        return value;
+    public Vertex(String label, int weight) {
+        this.label = label;
+        this.weight = weight;
+    }
+
+    @Override
+    public String toString() {
+        return "Vertex{" +
+                "label='" + label + '\'' +
+                ", weight=" + weight +
+                '}';
     }
 
     @Override
@@ -18,16 +28,11 @@ public class Vertex {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Vertex vertex = (Vertex) o;
-        return Objects.equals(value, vertex.value);
+        return Objects.equals(label, vertex.label);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(value);
-    }
-
-    @Override
-    public String toString() {
-        return value;
+        return Objects.hash(label);
     }
 }
