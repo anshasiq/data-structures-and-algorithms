@@ -45,7 +45,7 @@ public class App {
         jordan.addEdge("amman","Madaba",10);
         jordan.addEdge("amman","Maan",35);
         jordan.addEdge("Maan","Aqaba",5);
-        jordan.addEdge("Zarqa","Mafraq",33);
+        jordan.addEdge("Zarqa","Mafraq",33) ;
         String[] trip1 = {"amman", "Zarqa","Mafraq"};
 //        System.out.println(business_trip(jordan,trip1));
 //////////////////////////////////////////////////////
