@@ -3,8 +3,11 @@
  */
 package graph;
 
+
 import java.lang.reflect.Array;
+
 import java.util.List;
+
 
 public class App {
 
@@ -34,6 +37,7 @@ public class App {
     public static void main(String[] args) {
 
 
+
         Graph jordan= new Graph();
         jordan.addVertex("amman");
         jordan.addVertex("Mafraq");
@@ -59,5 +63,7 @@ public class App {
         }
 //        System.out.println(jordan.getNeighbors(a.label));
         /////////////////////////////////////////
+
 }
+
 }
