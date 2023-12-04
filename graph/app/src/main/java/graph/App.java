@@ -3,59 +3,61 @@
  */
 package graph;
 
+import java.lang.reflect.Array;
 import java.util.List;
 
 public class App {
-    public static Integer businessTrip(Graph graph, String[] cities) {
-        if (cities.length < 2) {
+
+   public static Integer business_trip(Graph graph, String[] city_names){
+       if (city_names.length < 2) {
             return null;
         }
-        int totalCost = 0;
-        for (int i = 0; i < cities.length - 1; i++) {
-            Vertex currentCity = new Vertex(cities[i]);
-            Vertex nextCity = new Vertex(cities[i + 1]);
-            List<Vertex> neighbors = graph.getNeighbors(currentCity.label);
-            if (neighbors == null || !neighbors.contains(nextCity)) {
-                return null;
-            }
-            for (Vertex neighbor : neighbors) {
-                if (neighbor.equals(nextCity)) {
-                    totalCost += neighbor.weight;
-                }
-            }
-        }
-        return totalCost;
-    }
+        int sum = 0;
+      for(int i=0;i<city_names.length-1;++i) {
+          Vertex currentCity = new Vertex(city_names[i]);
+          Vertex nextCity = new Vertex(city_names[i + 1]);
+          List<Vertex> neighbors = graph.getNeighbors(currentCity.label);
+          if (neighbors == null || !neighbors.contains(nextCity)) {
+              return null;
+          } else {
+              for (Vertex neighbor : neighbors) {
+                  if (neighbor.equals(nextCity)) {
+                      sum += neighbor.weight;
+                  }
+              }}
 
+
+      }
+
+       return sum;
+   }
     public static void main(String[] args) {
-        Graph graph = new Graph();
-
-        Vertex vertex1 = graph.addVertex("B");
-        Vertex vertex2 = graph.addVertex("A");
-        Vertex vertex3 = graph.addVertex("C");
-
-        graph.addEdge("A","B",7)  ;
-//        graph.addEdge("B","A",2);
-//        graph.addEdge(vertex2, vertex1);
-        System.out.println("Vertices: " + graph.getVertices());
-        System.out.println("Neighbors of vertex " + vertex2.label + ": " + graph.getNeighbors("A"));
-        System.out.println("Graph size: " + graph.size());
-        Graph citiesGraph = new Graph();
-        citiesGraph.addVertex("London");
-        citiesGraph.addVertex("Paris");
-        citiesGraph.addVertex("Berlin");
-        citiesGraph.addVertex("Rome");
-        citiesGraph.addEdge("London", "Paris", 50);
-        citiesGraph.addEdge("Paris", "Berlin", 40);
-        citiesGraph.addEdge("Berlin", "Rome", 30);
 
 
-        String[] trip1 = {"London", "Paris", "Berlin", "Rome"};
-        Integer cost1 = businessTrip(citiesGraph, trip1);
-        System.out.println(cost1);
+        Graph jordan= new Graph();
+        jordan.addVertex("amman");
+        jordan.addVertex("Mafraq");
+        jordan.addVertex("Zarqa");
+        jordan.addVertex("Madaba");
+        jordan.addVertex("Aqaba");
+        jordan.addVertex("Maan");
+        jordan.addEdge("amman","Zarqa",15);
+        jordan.addEdge("amman","Madaba",10);
+        jordan.addEdge("amman","Maan",35);
+        jordan.addEdge("Maan","Aqaba",5);
+        jordan.addEdge("Zarqa","Mafraq",33);
+        String[] trip1 = {"amman", "Zarqa","Mafraq"};
+//        System.out.println(business_trip(jordan,trip1));
+//////////////////////////////////////////////////////
+//        jordan.graph_depth_first(jordan.getVertices());
 
-        String[] trip2 = {"London", "Rome"};
-        Integer cost2 = businessTrip(citiesGraph, trip2);
-        System.out.println(cost2);
+     Vertex a = new Vertex("amman");
+//        System.out.println(jordan.getVertices());
+//        System.out.println(jordan.graph_depth_first(a));
+        for(Vertex v:jordan.graph_depth_first(a)){
+            System.out.println(v.label);
+        }
+//        System.out.println(jordan.getNeighbors(a.label));
+        /////////////////////////////////////////
 }
 }
