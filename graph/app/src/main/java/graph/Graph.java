@@ -83,4 +83,54 @@ public class Graph {
 
 
 
+
+
+    public List<Vertex> graph_depth_first(Vertex start) {
+        List<Vertex> visitedVertices = new ArrayList<>();
+        Set<Vertex> visited = new HashSet<>();
+        Stack<Vertex> stack = new Stack<>();
+
+        stack.push(start);
+
+        while (!stack.isEmpty()) {
+            Vertex current = stack.pop();
+
+            if (!visited.contains(current)) {
+                visitedVertices.add(current);
+                visited.add(current);
+
+                for (Vertex neighbor : adjVertices.get(current)) {
+                    if (!visited.contains(neighbor)) {
+                        stack.push(neighbor);
+                    }
+                }
+            }
+        }
+
+        return visitedVertices;
+    }
+
+
+
+
+    public void bfs(Vertex startVertex) {
+        Queue<Vertex> queue = new LinkedList<>();
+        Set<Vertex> visited = new HashSet<>();
+
+        queue.add(startVertex);
+        visited.add(startVertex);
+
+        while (!queue.isEmpty()) {
+            Vertex currentVertex = queue.poll();
+            System.out.print(currentVertex.label + " ");
+
+            for (Vertex neighbor : adjVertices.get(currentVertex)) {
+                if (!visited.contains(neighbor)) {
+                    queue.add(neighbor);
+                    visited.add(neighbor);
+                }
+            }
+        }}
+
+
 }
